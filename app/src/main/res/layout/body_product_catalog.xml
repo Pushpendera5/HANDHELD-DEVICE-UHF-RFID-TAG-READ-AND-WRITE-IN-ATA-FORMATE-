@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/rfid_screen_padding">
+
+    <TextView
+        android:id="@+id/catalogHeaderSubtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/TextAppearance.Rfid.BodyText"
+        android:text="Search products, open EPC details, and locate a selected tag with the reader." />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/catalogSearchCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/rfid_section_spacing"
+        app:cardBackgroundColor="@color/rfid_card_surface"
+        app:strokeColor="@color/rfid_card_stroke"
+        app:strokeWidth="1dp"
+        app:cardCornerRadius="@dimen/rfid_radius_medium"
+        app:cardElevation="2dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/rfid_card_spacing">
+
+            <TextView
+                android:id="@+id/catalogSearchLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TextAppearance.Rfid.HelperMetaText"
+                android:text="Search products" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/catalogSearchInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter name, SKU, description" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/catalogSearchButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Search products" />
+
+            <TextView
+                android:id="@+id/epcSearchLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TextAppearance.Rfid.HelperMetaText"
+                android:text="Find product by EPC" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/epcSearchInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:maxLines="1"
+                android:imeOptions="actionDone"
+                android:hint="Paste EPC to locate its product" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/epcSearchButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Find by EPC" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/locateEpcCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/rfid_section_spacing"
+        app:cardBackgroundColor="@color/rfid_card_surface"
+        app:strokeColor="@color/rfid_card_stroke"
+        app:strokeWidth="1dp"
+        app:cardCornerRadius="@dimen/rfid_radius_medium"
+        app:cardElevation="2dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/rfid_card_spacing">
+
+            <TextView
+                android:id="@+id/locateEpcLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TextAppearance.Rfid.HelperMetaText"
+                android:text="Locate EPC" />
+
+            <TextView
+                android:id="@+id/locateSelectedEpcText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                style="@style/TextAppearance.Rfid.SectionTitle"
+                android:text="No EPC selected" />
+
+            <TextView
+                android:id="@+id/locateGuidanceText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                style="@style/TextAppearance.Rfid.BodyText"
+                android:text="Choose an EPC to start live locating." />
+
+            <com.google.android.material.progressindicator.LinearProgressIndicator
+                android:id="@+id/locateSignalProgress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:max="100"
+                android:progress="0"
+                android:minHeight="8dp" />
+
+            <TextView
+                android:id="@+id/locateDistanceText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                style="@style/TextAppearance.Rfid.HelperMetaText"
+                android:text="Estimated distance: --" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/scanAvailabilityButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="Start live locate" />
+
+            <TextView
+                android:id="@+id/availabilityStatusText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                style="@style/TextAppearance.Rfid.HelperMetaText"
+                android:text="Availability: —" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/productDetailCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/rfid_section_spacing"
+        app:cardBackgroundColor="@color/rfid_card_surface"
+        app:strokeColor="@color/rfid_card_stroke"
+        app:strokeWidth="1dp"
+        app:cardCornerRadius="@dimen/rfid_radius_medium"
+        app:cardElevation="2dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/rfid_card_spacing">
+
+            <TextView
+                android:id="@+id/productDetailTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TextAppearance.Rfid.SectionTitle"
+                android:text="Select a product" />
+
+            <TextView
+                android:id="@+id/productDetailSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TextAppearance.Rfid.HelperMetaText"
+                android:text="—"
+                android:layout_marginTop="6dp" />
+
+            <TextView
+                android:id="@+id/registeredEpcsLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TextAppearance.Rfid.HelperMetaText"
+                android:text="Registered EPCs"
+                android:layout_marginTop="10dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/epcRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                android:scrollbars="vertical"
+                android:fadeScrollbars="false"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/catalogProductsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/TextAppearance.Rfid.SectionTitle"
+        android:text="Products"
+        android:layout_marginTop="@dimen/rfid_section_spacing" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/productRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:scrollbars="vertical"
+        android:fadeScrollbars="false"
+        android:nestedScrollingEnabled="false"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+</LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
+

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Spacing tokens -->
+    <dimen name="rfid_screen_padding">16dp</dimen>
+    <dimen name="rfid_section_spacing">12dp</dimen>
+    <dimen name="rfid_card_spacing">12dp</dimen>
+    <dimen name="rfid_list_item_spacing">8dp</dimen>
+
+    <!-- Radii -->
+    <dimen name="rfid_radius_small">8dp</dimen>
+    <dimen name="rfid_radius_medium">12dp</dimen>
+    <dimen name="rfid_radius_large">16dp</dimen>
+</resources>

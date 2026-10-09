@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/rfid_card_spacing"
+    app:cardCornerRadius="@dimen/rfid_radius_large"
+    app:cardBackgroundColor="@color/rfid_card_surface"
+    app:cardElevation="2dp"
+    app:strokeColor="@color/rfid_card_stroke"
+    app:strokeWidth="1dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/rfid_screen_padding">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/TextAppearance.Rfid.BodyText"
+        android:text="Choose the provider this device should connect to. Available options can be used now, while others are listed for future support." />
+
+    <TextView
+        android:id="@+id/providerSelectedSummary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/TextAppearance.Rfid.HelperMetaText"
+        android:text="No provider selected"
+        android:layout_marginTop="12dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/providerRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="14dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/connectContinueButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:visibility="gone"
+        android:text="@string/action_continue"
+        android:enabled="false"
+        style="@style/Widget.Rfid.Button.Primary" />
+</LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>
+

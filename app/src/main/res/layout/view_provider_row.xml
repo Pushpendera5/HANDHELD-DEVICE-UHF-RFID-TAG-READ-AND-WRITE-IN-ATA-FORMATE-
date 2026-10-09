@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/providerRowRoot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardCornerRadius="@dimen/rfid_radius_small"
+    app:cardBackgroundColor="@color/rfid_card_surface"
+    app:cardElevation="2dp"
+    app:strokeColor="@color/rfid_card_stroke"
+    app:strokeWidth="1dp"
+    android:layout_marginTop="@dimen/rfid_list_item_spacing"
+    android:layout_marginBottom="@dimen/rfid_list_item_spacing">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/rfid_screen_padding">
+
+        <TextView
+            android:id="@+id/providerRowName"
+            style="@style/TextAppearance.Rfid.SectionTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Provider Name" />
+
+        <TextView
+            android:id="@+id/providerRowSubtitle"
+            style="@style/TextAppearance.Rfid.HelperMetaText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Provider description"
+            android:layout_marginTop="6dp" />
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>
+

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="@dimen/rfid_radius_large"
+    app:cardBackgroundColor="@color/rfid_header_surface"
+    app:cardElevation="2dp"
+    app:strokeColor="@color/rfid_card_stroke"
+    app:strokeWidth="1dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rfid_luxury_header_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/rfid_screen_padding">
+        <ImageButton
+            android:id="@+id/appHeaderBackButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="8dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/cd_navigate_back"
+            android:padding="8dp"
+            android:src="@android:drawable/ic_media_previous"
+            android:tint="?attr/colorOnSurface"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/appHeaderTitle"
+            style="@style/TextAppearance.Rfid.SectionTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@string/header_title_placeholder" />
+
+        <TextView
+            android:id="@+id/appHeaderSubtitle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            android:text="@string/header_subtitle_placeholder" />
+
+        <com.rfidsoftwares.presentation.views.ConnectivityIndicatorView
+            android:id="@+id/connectivityIndicatorView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp" />
+
+        <ImageButton
+            android:id="@+id/issueCenterButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/cd_open_issues"
+            android:padding="8dp"
+            android:src="@android:drawable/stat_notify_error"
+            android:tint="?attr/colorOnSurface"
+            android:visibility="gone" />
+
+        <ImageButton
+            android:id="@+id/themeModeButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="4dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/cd_toggle_theme"
+            android:padding="8dp"
+            android:src="@drawable/ic_theme_sun"
+            android:tint="?attr/colorOnSurface" />
+
+        <ImageButton
+            android:id="@+id/logoutButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="4dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Logout"
+            android:padding="8dp"
+            android:src="@drawable/ic_power_off" />
+
+        <FrameLayout
+            android:id="@+id/appHeaderActionSlot"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone" />
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>
+

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Material 3 app theme (Phase 1). -->
+    <style name="Theme.RfidInventoryApp" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Keep status bar readable on both light/dark. -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@color/rfid_surface</item>
+        <item name="android:windowBackground">@color/rfid_surface</item>
+
+        <!-- Core color roles (material will derive surfaces/tonal variants). -->
+        <item name="colorPrimary">@color/rfid_primary</item>
+        <item name="colorOnPrimary">@color/rfid_on_primary</item>
+        <item name="colorSecondary">@color/rfid_secondary</item>
+        <item name="colorOnSecondary">@color/rfid_on_secondary</item>
+        <item name="colorTertiary">@color/rfid_tertiary</item>
+        <item name="colorOnTertiary">@color/rfid_on_tertiary</item>
+
+        <item name="colorError">@color/rfid_error</item>
+        <item name="colorOnError">@color/rfid_on_error</item>
+    </style>
+
+    <!-- Typography tokens (used by Phase 1 layouts). -->
+    <style name="TextAppearance.Rfid.ScreenTitle" parent="TextAppearance.Material3.HeadlineSmall">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.Rfid.SectionTitle" parent="TextAppearance.Material3.TitleMedium">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Dashboard stat values (kept smaller than ScreenTitle). -->
+    <style name="TextAppearance.Rfid.StatValue" parent="TextAppearance.Material3.TitleMedium">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Compact title used in icon action cards. -->
+    <style name="TextAppearance.Rfid.ActionTitle" parent="TextAppearance.Material3.LabelLarge">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.Rfid.BodyText" parent="TextAppearance.Material3.BodyLarge" />
+    <style name="TextAppearance.Rfid.HelperMetaText" parent="TextAppearance.Material3.BodySmall" />
+
+    <!-- Defaults for primary/secondary labels. -->
+    <style name="TextAppearance.Rfid.ButtonLabel" parent="TextAppearance.Material3.LabelLarge" />
+
+    <!-- Reusable button widgets. -->
+    <style name="Widget.Rfid.Button.Primary" parent="Widget.Material3.Button">
+        <item name="android:textAppearance">@style/TextAppearance.Rfid.ButtonLabel</item>
+    </style>
+
+    <style name="Widget.Rfid.Button.Secondary" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="android:textAppearance">@style/TextAppearance.Rfid.ButtonLabel</item>
+    </style>
+</resources>
+

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/rfid_screen_padding">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/adminProviderStatusCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/rfid_radius_large"
+            app:cardBackgroundColor="@color/rfid_card_surface"
+            app:cardElevation="2dp"
+            app:strokeColor="@color/rfid_card_stroke"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/rfid_screen_padding">
+
+                <TextView
+                    android:id="@+id/adminProviderStatusLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/TextAppearance.Rfid.SectionTitle"
+                    android:text="Connected Provider" />
+
+                <TextView
+                    android:id="@+id/adminProviderStatusValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/TextAppearance.Rfid.BodyText"
+                    android:text="Not connected"
+                    android:layout_marginTop="6dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    style="@style/TextAppearance.Rfid.HelperMetaText"
+                    android:text="Use this dashboard to launch day-to-day scanning tasks, review support signals, and open admin tools." />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Stats row -->
+        <LinearLayout
+            android:id="@+id/adminStatsRow"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp">
+
+            <include
+                android:id="@+id/adminStatCardIssues"
+                layout="@layout/view_dashboard_stat_card"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <include
+                android:id="@+id/adminStatCardQueue"
+                layout="@layout/view_dashboard_stat_card"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1" />
+
+            <include
+                android:id="@+id/adminStatCardEpcs"
+                layout="@layout/view_dashboard_stat_card"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/adminQuickActionsLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/TextAppearance.Rfid.SectionTitle"
+            android:text="Start a Task"
+            android:layout_marginTop="18dp" />
+
+        <!-- We add action-card rows programmatically (2 columns per row). -->
+        <LinearLayout
+            android:id="@+id/adminActionRowsContainer"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp" />
+
+    </LinearLayout>
+</ScrollView>
+

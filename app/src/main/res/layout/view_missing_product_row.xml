@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/missingProductRowRoot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/rfid_list_item_spacing"
+    android:layout_marginBottom="@dimen/rfid_list_item_spacing"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardCornerRadius="@dimen/rfid_radius_small"
+    app:cardBackgroundColor="@color/rfid_card_surface"
+    app:cardElevation="2dp"
+    app:strokeColor="@color/rfid_card_stroke"
+    app:strokeWidth="1dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/rfid_screen_padding">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/missingProductRowName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                style="@style/TextAppearance.Rfid.SectionTitle"
+                tools:text="Product Name" />
+
+            <ImageButton
+                android:id="@+id/missingProductRowRemoveButton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Remove missing tags"
+                android:padding="8dp"
+                android:src="@android:drawable/ic_menu_delete"
+                android:tint="?attr/colorOnSurface" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/missingProductRowSku"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/TextAppearance.Rfid.HelperMetaText"
+            android:layout_marginTop="6dp"
+            tools:text="sku=n/a" />
+
+        <TextView
+            android:id="@+id/missingProductRowMissingCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/TextAppearance.Rfid.HelperMetaText"
+            android:layout_marginTop="10dp"
+            tools:text="2 missing tag(s)" />
+
+        <TextView
+            android:id="@+id/missingProductRowPreview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/TextAppearance.Rfid.BodyText"
+            android:layout_marginTop="10dp"
+            tools:text="EPC1, EPC2" />
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>
+

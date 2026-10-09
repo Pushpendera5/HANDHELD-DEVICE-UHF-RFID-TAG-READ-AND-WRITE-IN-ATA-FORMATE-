@@ -1,0 +1,68 @@
+# Built application files
+*.apk
+*.ap_
+*.aab
+
+# Files for Android Studio & IntelliJ
+.gradle/
+local.properties
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+captures/
+.buildpath
+.project
+.cxx/
+.externalNativeBuild/
+
+# Built native files
+obj/
+*.so
+
+# Keystore files
+*.jks
+*.keystore
+
+# Log files
+*.log
+
+# Generated build files
+build/
+app/build/
+gen/
+bin/
+
+# Gradle cache & setting
+.gradle/
+gradle-app.setting
+
+# IDEs & OS generated files
+*.swp
+*.swo
+*~
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Crashlytics & fastlane
+crashlytics-build.properties
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/
+
+# Google Services & Credentials
+google-services.json
+fabric.properties
+
+# Misc / Temporary
+npm-debug.log
+yarn-error.log
+new_app_plan/
+.gemini/
+scratch_aar/
+scratch_jar/
+classes.jar
+tagaccess_javap.txt
+current_screen_ready.png

@@ -1,0 +1,20 @@
+{
+  "bill": {
+    "billId": "bill-1",
+    "status": "paid",
+    "amount": {
+      "currency": "USD",
+      "amount": 99.99
+    }
+  },
+  "tagsToUpdate": [
+    {
+      "epc": "E280699500005000FEF3B548",
+      "billedState": "billed",
+      "metaData": {
+        "reason": "test"
+      }
+    }
+  ]
+}
+

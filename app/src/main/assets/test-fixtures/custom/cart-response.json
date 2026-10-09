@@ -1,0 +1,17 @@
+{
+  "cart": {
+    "id": "cart-1",
+    "total": {
+      "currency": "USD",
+      "amount": 99.99
+    },
+    "lineItems": [
+      {
+          "productId": "p001",
+        "quantity": 1,
+          "title": "Android Smartphone X1 (128GB)"
+      }
+    ]
+  }
+}
+

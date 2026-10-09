@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/dashboardStatCardRoot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="@dimen/rfid_radius_medium"
+    app:cardBackgroundColor="@color/rfid_card_surface"
+    app:cardElevation="2dp"
+    app:strokeColor="@color/rfid_card_stroke"
+    app:strokeWidth="1dp"
+    android:layout_margin="0dp"
+    android:padding="0dp"
+    android:minHeight="84dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/dashboardStatValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/TextAppearance.Rfid.StatValue"
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/dashboardStatLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/TextAppearance.Rfid.HelperMetaText"
+            android:text="Label"
+            android:layout_marginTop="6dp"
+            android:layout_gravity="center_horizontal" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>
+

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/featureRowRoot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/rfid_list_item_spacing"
+    android:layout_marginBottom="@dimen/rfid_list_item_spacing"
+    app:cardCornerRadius="@dimen/rfid_radius_small"
+    app:cardBackgroundColor="@color/rfid_card_surface"
+    app:cardElevation="2dp"
+    app:strokeColor="@color/rfid_card_stroke"
+    app:strokeWidth="1dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/rfid_screen_padding">
+
+        <TextView
+            android:id="@+id/featureRowTitle"
+            style="@style/TextAppearance.Rfid.SectionTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Feature Title" />
+
+        <TextView
+            android:id="@+id/featureRowSubtitle"
+            style="@style/TextAppearance.Rfid.HelperMetaText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Feature subtitle"
+            android:layout_marginTop="6dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/featureRowButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Open task"
+            android:enabled="true" />
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>
+

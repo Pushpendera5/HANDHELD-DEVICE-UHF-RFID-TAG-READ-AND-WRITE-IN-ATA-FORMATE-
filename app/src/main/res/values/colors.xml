@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Luxury palette (light) -->
+    <color name="rfid_primary">#D8A45A</color>
+    <color name="rfid_on_primary">#1A140B</color>
+
+    <color name="rfid_secondary">#2F6F5D</color>
+    <color name="rfid_on_secondary">#FFFFFF</color>
+
+    <color name="rfid_tertiary">#6A4C93</color>
+    <color name="rfid_on_tertiary">#FFFFFF</color>
+
+    <!-- Background/surface foundations -->
+    <color name="rfid_surface">#F7F4EF</color>
+    <color name="rfid_surface_variant">#E8E1D7</color>
+    <color name="rfid_on_surface">#1A140B</color>
+    <color name="rfid_header_surface">#FFFFFF</color>
+    <color name="rfid_card_surface">#FFFFFF</color>
+    <color name="rfid_card_stroke">#E8E1D7</color>
+
+    <!-- Roles for error messaging. -->
+    <color name="rfid_error">#B00020</color>
+    <color name="rfid_on_error">#FFFFFF</color>
+
+    <!-- Online/offline indicator roles. -->
+    <color name="rfid_online">#2E7D32</color>
+    <color name="rfid_offline">#C62828</color>
+
+    <!-- Basic state chip/background. -->
+    <color name="rfid_chip_background">#FFF1D6</color>
+</resources>

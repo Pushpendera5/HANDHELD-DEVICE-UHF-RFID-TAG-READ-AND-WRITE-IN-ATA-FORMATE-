@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/rfid_card_spacing"
+    app:cardCornerRadius="@dimen/rfid_radius_large"
+    app:cardBackgroundColor="@color/rfid_card_surface"
+    app:cardElevation="2dp"
+    app:strokeColor="@color/rfid_card_stroke"
+    app:strokeWidth="1dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/rfid_screen_padding">
+
+        <TextView
+            android:id="@+id/landingBody"
+            style="@style/TextAppearance.Rfid.BodyText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="This app helps teams connect a provider, scan inventory, review exceptions, and run anti-theft checks from one place." />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/rfid_section_spacing"
+            app:cardCornerRadius="@dimen/rfid_radius_medium"
+            app:cardBackgroundColor="@color/rfid_chip_background"
+            app:cardElevation="0dp"
+            app:strokeColor="@color/rfid_card_stroke"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/rfid_screen_padding">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1. Sign in and choose a provider"
+                    style="@style/TextAppearance.Rfid.HelperMetaText" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="2. Open your dashboard and start the task you need"
+                    style="@style/TextAppearance.Rfid.HelperMetaText" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="3. Review issues, diagnostics, and scan results when needed"
+                    style="@style/TextAppearance.Rfid.HelperMetaText" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/landingContinueButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="@string/action_continue"
+            style="@style/Widget.Rfid.Button.Primary" />
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>
+

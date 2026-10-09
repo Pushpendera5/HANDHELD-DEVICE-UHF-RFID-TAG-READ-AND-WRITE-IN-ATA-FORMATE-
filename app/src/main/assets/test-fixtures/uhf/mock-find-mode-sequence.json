@@ -1,0 +1,8 @@
+{
+  "events": [
+    { "epc": "EPC1", "rssi": -80, "source": "EPC", "seenAtOffsetMs": 0 },
+    { "epc": "EPC1", "rssi": -65, "source": "EPC", "seenAtOffsetMs": 100 },
+    { "epc": "EPC1", "rssi": -50, "source": "EPC", "seenAtOffsetMs": 200 }
+  ]
+}
+

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/rfid_card_spacing"
+    app:cardCornerRadius="@dimen/rfid_radius_large"
+    app:cardBackgroundColor="@color/rfid_card_surface"
+    app:cardElevation="2dp"
+    app:strokeColor="@color/rfid_card_stroke"
+    app:strokeWidth="1dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/rfid_screen_padding">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/TextAppearance.Rfid.BodyText"
+        android:text="Until role syncing is fully wired, choose the workspace you want to use for this session." />
+
+    <TextView
+        android:id="@+id/roleGateStatusText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        style="@style/TextAppearance.Rfid.HelperMetaText"
+        android:text="Admin includes setup tools. User focuses on daily operations." />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/enterAsAdminButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="Open admin workspace"
+        style="@style/Widget.Rfid.Button.Primary" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/enterAsUserButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Open user workspace"
+        style="@style/Widget.Rfid.Button.Secondary" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>
+

@@ -1,0 +1,11 @@
+{
+  "events": [
+    { "epc": "E280699500005000FEF3B548", "rssi": -42, "source": "EPC" },
+    { "epc": "E280699500004000FEF5D148", "rssi": -58, "source": "EPC" },
+    { "epc": "UNKNOWN_TAG_Z", "rssi": -70, "source": "EPC" },
+    { "epc": "E280699500005000FEF83548", "rssi": -44, "source": "EPC" },
+    { "epc": "E280699500004000FEF83148", "rssi": -50, "source": "EPC" },
+    { "epc": "E280699500004000FEF83148", "rssi": -51, "source": "EPC" }
+  ]
+}
+

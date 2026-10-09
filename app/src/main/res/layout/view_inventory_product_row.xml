@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/inventoryProductRowRoot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/rfid_list_item_spacing"
+    app:cardBackgroundColor="@color/rfid_card_surface"
+    app:cardCornerRadius="@dimen/rfid_radius_medium"
+    app:cardElevation="1dp"
+    app:strokeColor="@color/rfid_card_stroke"
+    app:strokeWidth="1dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/rfid_card_spacing">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/inventoryProductRowName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    style="@style/TextAppearance.Rfid.SectionTitle"
+                    tools:text="Product name" />
+
+                <TextView
+                    android:id="@+id/inventoryProductRowSku"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    style="@style/TextAppearance.Rfid.HelperMetaText"
+                    tools:text="SKU-123" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/inventoryProductRowStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                style="@style/TextAppearance.Rfid.HelperMetaText"
+                tools:text="Verified" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/inventoryProductRowCount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            style="@style/TextAppearance.Rfid.BodyText"
+            tools:text="2 of 4 tags verified" />
+
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/inventoryProductRowProgress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:max="100"
+            android:minHeight="6dp"
+            android:progress="0" />
+
+        <TextView
+            android:id="@+id/inventoryProductRowHint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            style="@style/TextAppearance.Rfid.HelperMetaText"
+            tools:text="Keep scanning this product." />
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

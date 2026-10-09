@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="32dp"
+    android:background="@color/rfid_surface">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        app:cardCornerRadius="28dp"
+        app:cardElevation="6dp"
+        app:strokeWidth="0dp"
+        app:cardBackgroundColor="@color/rfid_surface_variant">
+
+        <ImageView
+            android:id="@+id/splashLogoImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerInside"
+            android:padding="16dp"
+            android:src="@drawable/splash_logo"
+            android:contentDescription="@string/app_name" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/splashTitleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="OpenRFID"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="@color/rfid_primary"
+        android:letterSpacing="0.04" />
+
+    <TextView
+        android:id="@+id/splashSubtitleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Universal Handheld Suite"
+        android:textSize="14sp"
+        android:textColor="@color/rfid_on_surface"
+        android:alpha="0.7" />
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/splashProgressBar"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:indeterminate="true"
+        app:indicatorColor="@color/rfid_primary"
+        app:trackColor="@color/rfid_surface_variant"
+        app:trackCornerRadius="4dp" />
+
+    <TextView
+        android:id="@+id/splashVersionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="Open Source Edition • Phase 0"
+        android:textSize="12sp"
+        android:textColor="@color/rfid_on_surface"
+        android:alpha="0.5" />
+
+</LinearLayout>

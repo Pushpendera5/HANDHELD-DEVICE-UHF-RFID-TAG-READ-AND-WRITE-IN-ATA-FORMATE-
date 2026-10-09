@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">OpenRFID Handheld Middleware</string>
+    <string name="cd_navigate_back">Go back</string>
+    <string name="cd_open_issues">Open issues</string>
+    <string name="cd_toggle_theme">Change theme</string>
+    <string name="header_title_placeholder">Screen</string>
+    <string name="header_subtitle_placeholder">Helpful context</string>
+    <string name="action_issues">Issues</string>
+    <string name="action_retry">Retry</string>
+    <string name="action_refresh">Refresh</string>
+    <string name="action_continue">Continue</string>
+    <string name="action_sign_in">Sign in</string>
+    <string name="action_switch_to_dark">Dark mode</string>
+    <string name="action_switch_to_light">Light mode</string>
+    <string name="theme_change_title">Apply theme change?</string>
+    <string name="theme_change_message">Changing the theme will refresh the current screen. Continue?</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_apply">Apply</string>
+    <string name="offline_title">Offline</string>
+    <string name="offline_message">You appear to be offline. Some actions may be unavailable until your connection returns.</string>
+    <string name="status_online">Online</string>
+    <string name="status_offline">Offline</string>
+</resources>
+

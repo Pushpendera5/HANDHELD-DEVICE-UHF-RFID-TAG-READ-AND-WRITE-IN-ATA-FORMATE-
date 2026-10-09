@@ -1,0 +1,111 @@
+{
+  "products": [
+    { "id": "p001", "sku": "MOB-001", "name": "Android Smartphone X1 (128GB)", "status": "active", "updatedAtEpochMs": 1700000001000, "description": "Mobile handset" },
+    { "id": "p002", "sku": "MOB-002", "name": "Android Smartphone X1 (256GB)", "status": "active", "updatedAtEpochMs": 1700000002000, "description": "Mobile handset variant" },
+    {
+      "id": "p003",
+      "sku": "SKU-003",
+      "name": "True Wireless Earbuds Pro",
+      "status": "active",
+      "updatedAtEpochMs": 1700000003000,
+      "description": "Bluetooth earphones",
+      "variants": [
+        { "tagEpc": "E280699500005000FEF28147", "productId": "p003", "state": "active" },
+        { "tagEpc": "E280699500004000FEF44548", "productId": "p003", "state": "active" }
+      ]
+    },
+    { "id": "p004", "sku": "AUD-004", "name": "Neckband Earphones N2", "status": "active", "updatedAtEpochMs": 1700000004000, "description": "Wireless neckband earphones" },
+    { "id": "p005", "sku": "AUD-005", "name": "Over-Ear Headphones H7", "status": "active", "updatedAtEpochMs": 1700000005000, "description": "Noise-isolation headphones" },
+    {
+      "id": "p006",
+      "sku": "SKU-006",
+      "name": "Bluetooth Speaker S10",
+      "status": "active",
+      "updatedAtEpochMs": 1700000006000,
+      "description": "Portable speaker",
+      "variants": [
+        { "tagEpc": "E280699500005000FEF31948", "productId": "p006", "state": "active" },
+        { "tagEpc": "E280699500005000FEF7A948", "productId": "p006", "state": "active" }
+      ]
+    },
+    { "id": "p007", "sku": "CAS-007", "name": "Silicone Back Cover (X1)", "status": "active", "updatedAtEpochMs": 1700000007000, "description": "Mobile cover" },
+    { "id": "p008", "sku": "CAS-008", "name": "Shockproof Back Cover (X1)", "status": "active", "updatedAtEpochMs": 1700000008000, "description": "Rugged mobile case" },
+    { "id": "p009", "sku": "PRT-009", "name": "Tempered Glass 6.5in", "status": "active", "updatedAtEpochMs": 1700000009000, "description": "Screen protector" },
+    {
+      "id": "p010",
+      "sku": "SKU-010",
+      "name": "Smart Watch Z Fit",
+      "status": "active",
+      "updatedAtEpochMs": 1700000010000,
+      "description": "Wearable smart watch",
+      "variants": [
+        { "tagEpc": "E280699500004000FEF44948", "productId": "p010", "state": "active" },
+        { "tagEpc": "E280699500004000FEF2B548", "productId": "p010", "state": "active" }
+      ]
+    },
+    { "id": "p011", "sku": "SUP-011", "name": "Mobile Stand Foldable", "status": "active", "updatedAtEpochMs": 1700000011000, "description": "Desk mobile stand" },
+    { "id": "p012", "sku": "SUP-012", "name": "Ring Light 10-inch", "status": "active", "updatedAtEpochMs": 1700000012000, "description": "LED ring light for creators" },
+    { "id": "p013", "sku": "GAM-013", "name": "Bluetooth Gamepad G3", "status": "active", "updatedAtEpochMs": 1700000013000, "description": "Mobile gaming controller" },
+    { "id": "p014", "sku": "CHG-014", "name": "Fast Charger 33W", "status": "active", "updatedAtEpochMs": 1700000014000, "description": "USB-C fast charging adapter" },
+    { "id": "p015", "sku": "CHG-015", "name": "USB-C Cable Braided", "status": "active", "updatedAtEpochMs": 1700000015000, "description": "Durable charging/data cable" },
+    {
+      "id": "p016",
+      "sku": "SKU-016",
+      "name": "Power Bank 20000mAh",
+      "status": "active",
+      "updatedAtEpochMs": 1700000016000,
+      "description": "Portable battery pack",
+      "variants": [
+        { "tagEpc": "E280699500005000FEF60D48", "productId": "p016", "state": "active" },
+        { "tagEpc": "E280699500005000FEF41D48", "productId": "p016", "state": "active" }
+      ]
+    },
+    { "id": "p017", "sku": "PRT-017", "name": "Camera Lens Protector", "status": "active", "updatedAtEpochMs": 1700000017000, "description": "Rear camera guard" },
+    { "id": "p018", "sku": "AUX-018", "name": "3.5mm Wired Earphones", "status": "active", "updatedAtEpochMs": 1700000018000, "description": "Wired earphone" },
+    { "id": "p019", "sku": "AUX-019", "name": "Bluetooth Speaker Mini", "status": "active", "updatedAtEpochMs": 1700000019000, "description": "Compact speaker" },
+    { "id": "p020", "sku": "SUP-020", "name": "Car Mobile Holder", "status": "active", "updatedAtEpochMs": 1700000020000, "description": "Dashboard mobile holder" }
+  ],
+  "epcs": [
+    { "epc": "E280699500005000FEF3B548", "productId": "p001", "state": "billed", "createdAtEpochMs": 1700000001001, "updatedAtEpochMs": 1700000001001 },
+    { "epc": "E280699500005000FEF83548", "productId": "p001", "state": "billed", "createdAtEpochMs": 1700000001002, "updatedAtEpochMs": 1700000001002 },
+    { "epc": "E280699500004000FEF5D148", "productId": "p002", "state": "billed", "createdAtEpochMs": 1700000002001, "updatedAtEpochMs": 1700000002001 },
+    { "epc": "E280699500004000FEF83148", "productId": "p002", "state": "active", "createdAtEpochMs": 1700000002002, "updatedAtEpochMs": 1700000002002 },
+    { "epc": "E280699500004000FEF76D48", "productId": "p003", "state": "active", "createdAtEpochMs": 1700000003001, "updatedAtEpochMs": 1700000003001 },
+    { "epc": "E280699500004000FEF73D48", "productId": "p003", "state": "active", "createdAtEpochMs": 1700000003002, "updatedAtEpochMs": 1700000003002 },
+    { "epc": "E280699500004000FEF63948", "productId": "p004", "state": "active", "createdAtEpochMs": 1700000004001, "updatedAtEpochMs": 1700000004001 },
+    { "epc": "E280699500005000FEF7A548", "productId": "p004", "state": "active", "createdAtEpochMs": 1700000004002, "updatedAtEpochMs": 1700000004002 },
+    { "epc": "E280699500005000FEF80948", "productId": "p005", "state": "active", "createdAtEpochMs": 1700000005001, "updatedAtEpochMs": 1700000005001 },
+    { "epc": "E280699500005000FEF6D948", "productId": "p005", "state": "active", "createdAtEpochMs": 1700000005002, "updatedAtEpochMs": 1700000005002 },
+    { "epc": "E280699500004000FEF7CD48", "productId": "p006", "state": "active", "createdAtEpochMs": 1700000006001, "updatedAtEpochMs": 1700000006001 },
+    { "epc": "E280699500005000FEF67948", "productId": "p006", "state": "active", "createdAtEpochMs": 1700000006002, "updatedAtEpochMs": 1700000006002 },
+    { "epc": "E280699500005000FEF95949", "productId": "p007", "state": "active", "createdAtEpochMs": 1700000007001, "updatedAtEpochMs": 1700000007001 },
+    { "epc": "E280699500004000FEF61148", "productId": "p007", "state": "active", "createdAtEpochMs": 1700000007002, "updatedAtEpochMs": 1700000007002 },
+    { "epc": "E280699500004000FEF64148", "productId": "p008", "state": "active", "createdAtEpochMs": 1700000008001, "updatedAtEpochMs": 1700000008001 },
+    { "epc": "E280699500004000FEF70148", "productId": "p008", "state": "active", "createdAtEpochMs": 1700000008002, "updatedAtEpochMs": 1700000008002 },
+    { "epc": "E280699500004000FEF57148", "productId": "p009", "state": "active", "createdAtEpochMs": 1700000009001, "updatedAtEpochMs": 1700000009001 },
+    { "epc": "E280699500004000FEF35548", "productId": "p009", "state": "active", "createdAtEpochMs": 1700000009002, "updatedAtEpochMs": 1700000009002 },
+    { "epc": "E280699500005000FEF89548", "productId": "p010", "state": "active", "createdAtEpochMs": 1700000010001, "updatedAtEpochMs": 1700000010001 },
+    { "epc": "E280699500005000FEF1ED48", "productId": "p010", "state": "active", "createdAtEpochMs": 1700000010002, "updatedAtEpochMs": 1700000010002 },
+    { "epc": "E280699500005000FEF54548", "productId": "p011", "state": "active", "createdAtEpochMs": 1700000011001, "updatedAtEpochMs": 1700000011001 },
+    { "epc": "E280699500004000FEF41948", "productId": "p011", "state": "active", "createdAtEpochMs": 1700000011002, "updatedAtEpochMs": 1700000011002 },
+    { "epc": "E280699500005000FEF74148", "productId": "p012", "state": "active", "createdAtEpochMs": 1700000012001, "updatedAtEpochMs": 1700000012001 },
+    { "epc": "E280699500005000FEF4A948", "productId": "p012", "state": "active", "createdAtEpochMs": 1700000012002, "updatedAtEpochMs": 1700000012002 },
+    { "epc": "E280699500005000FEF19947", "productId": "p013", "state": "active", "createdAtEpochMs": 1700000013001, "updatedAtEpochMs": 1700000013001 },
+    { "epc": "E280699500005000FEF50D48", "productId": "p013", "state": "active", "createdAtEpochMs": 1700000013002, "updatedAtEpochMs": 1700000013002 },
+    { "epc": "E280699500004000FEF22548", "productId": "p014", "state": "active", "createdAtEpochMs": 1700000014001, "updatedAtEpochMs": 1700000014001 },
+    { "epc": "E280699500004000FEF2B948", "productId": "p014", "state": "active", "createdAtEpochMs": 1700000014002, "updatedAtEpochMs": 1700000014002 },
+    { "epc": "E280699500005000FEF8D148", "productId": "p015", "state": "active", "createdAtEpochMs": 1700000015001, "updatedAtEpochMs": 1700000015001 },
+    { "epc": "E280699500005000FEF6A148", "productId": "p015", "state": "active", "createdAtEpochMs": 1700000015002, "updatedAtEpochMs": 1700000015002 },
+    { "epc": "E280699500004000FEF4AD48", "productId": "p016", "state": "active", "createdAtEpochMs": 1700000016001, "updatedAtEpochMs": 1700000016001 },
+    { "epc": "E280699500004000FEF1C147", "productId": "p016", "state": "active", "createdAtEpochMs": 1700000016002, "updatedAtEpochMs": 1700000016002 },
+    { "epc": "E280699500004000FEF4E548", "productId": "p017", "state": "active", "createdAtEpochMs": 1700000017001, "updatedAtEpochMs": 1700000017001 },
+    { "epc": "E280699500004000FEF2F148", "productId": "p017", "state": "active", "createdAtEpochMs": 1700000017002, "updatedAtEpochMs": 1700000017002 },
+    { "epc": "E280699500005000FEF47D48", "productId": "p018", "state": "active", "createdAtEpochMs": 1700000018001, "updatedAtEpochMs": 1700000018001 },
+    { "epc": "E280699500005000FEF87148", "productId": "p018", "state": "active", "createdAtEpochMs": 1700000018002, "updatedAtEpochMs": 1700000018002 },
+    { "epc": "E280699500005000FEF1BD48", "productId": "p019", "state": "active", "createdAtEpochMs": 1700000019001, "updatedAtEpochMs": 1700000019001 },
+    { "epc": "E280699500004000FEF31D48", "productId": "p019", "state": "active", "createdAtEpochMs": 1700000019002, "updatedAtEpochMs": 1700000019002 },
+    { "epc": "E280699500005000FEF5D948", "productId": "p020", "state": "active", "createdAtEpochMs": 1700000020001, "updatedAtEpochMs": 1700000020001 },
+    { "epc": "E280699500004000FEF38148", "productId": "p020", "state": "active", "createdAtEpochMs": 1700000020002, "updatedAtEpochMs": 1700000020002 }
+  ]
+}
+

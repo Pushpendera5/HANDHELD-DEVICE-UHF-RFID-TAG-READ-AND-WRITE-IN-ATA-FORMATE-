@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/writeTagScrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+  <LinearLayout
+      android:orientation="vertical"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:padding="@dimen/rfid_screen_padding">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/TextAppearance.Rfid.SectionTitle"
+        android:text="Write Tag" />
+
+    <!-- Target EPC & Scan Section (Common for all modes) -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/rfid_section_spacing"
+        android:hint="Target EPC">
+
+      <com.google.android.material.textfield.TextInputEditText
+          android:id="@+id/writeTagEpcInput"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:fontFamily="monospace"
+          android:textSize="13sp"
+          android:inputType="textCapCharacters" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/writeTagScanButton"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:text="Scan Target Tag"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+
+    <!-- Mode Selector: Direct HEX vs ATA Spec 2000 -->
+    <RadioGroup
+        android:id="@+id/writeModeRadioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginTop="14dp"
+        android:orientation="horizontal"
+        android:background="@drawable/bg_icon_badge"
+        android:padding="3dp">
+
+        <RadioButton
+            android:id="@+id/radioDirectHex"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:text="Standard HEX"
+            android:textColor="@color/rfid_on_surface"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:checked="true" />
+
+        <RadioButton
+            android:id="@+id/radioAtaSpec2000"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:text="ATA Spec 2000"
+            android:textColor="@color/rfid_on_surface"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+    </RadioGroup>
+
+    <!-- CONTAINER 1: Standard Direct HEX -->
+    <LinearLayout
+        android:id="@+id/containerDirectHex"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/rfid_section_spacing"
+            android:hint="Access Password (Optional)">
+
+          <com.google.android.material.textfield.TextInputEditText
+              android:id="@+id/writeTagAccessPwdInput"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/rfid_section_spacing"
+            android:hint="Memory Bank (EPC / USER)">
+
+          <com.google.android.material.textfield.TextInputEditText
+              android:id="@+id/writeTagBankInput"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/rfid_section_spacing"
+            android:hint="Word Offset">
+
+          <com.google.android.material.textfield.TextInputEditText
+              android:id="@+id/writeTagWordPtrInput"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/rfid_section_spacing"
+            android:hint="Data (HEX)">
+
+          <com.google.android.material.textfield.TextInputEditText
+              android:id="@+id/writeTagDataInput"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+    <!-- CONTAINER 2: ATA Spec 2000 (Aviation TEI Encoder) -->
+    <LinearLayout
+        android:id="@+id/containerAtaSpec2000"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <!-- CAGE Code + MFR/SPL toggle -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="14dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="4dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="CAGE Code"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/rfid_on_surface" />
+
+                <RadioGroup
+                    android:id="@+id/writeAtaCageRadioGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/writeAtaRadioMfr"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="MFR"
+                        android:textSize="11sp"
+                        android:checked="true" />
+
+                    <RadioButton
+                        android:id="@+id/writeAtaRadioSpl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="SPL"
+                        android:textSize="11sp"
+                        android:layout_marginStart="8dp" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="CAGE Code">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/writeAtaCageInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapCharacters"
+                    android:maxLength="10" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <!-- Row: Part Number + Serial Number -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="6dp"
+                android:hint="Part Number (PNO)">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/writeAtaPnoInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapCharacters" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Serial Number (SER)">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/writeAtaSerInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapCharacters" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <!-- Row: Lot Number + Description -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="6dp"
+                android:hint="Lot / Batch No">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/writeAtaLotInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapCharacters" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Description">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/writeAtaDescInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapSentences" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <!-- Row: Quantity + UOM + Condition -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="6dp"
+                android:hint="Quantity">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/writeAtaQtyInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="6dp"
+                android:hint="UOM (EA/KG)">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/writeAtaUomInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapCharacters" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Condition">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/writeAtaCondInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapCharacters" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <!-- Row: Mfg Date + Expiry Date -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="10dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Mfg Date (YYYYMMDD)">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/writeAtaDmfInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:maxLength="8" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/writeAtaBtnSetToday"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="4dp"
+                android:text="Today" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Expiry (YYYYMMDD)">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/writeAtaExpInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:maxLength="8" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <!-- Row: Certificate Ref + Traceability -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="6dp"
+                android:hint="Certificate Ref">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/writeAtaCertInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapCharacters" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Traceability">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/writeAtaTraceInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapCharacters" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <!-- Preview -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Payload Preview:"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:alpha="0.7"
+            android:textColor="@color/rfid_on_surface" />
+
+        <TextView
+            android:id="@+id/writeAtaPreviewText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/bg_icon_badge"
+            android:padding="8dp"
+            android:fontFamily="monospace"
+            android:textSize="10sp"
+            android:textColor="@color/rfid_primary"
+            android:text=""
+            tools:text="[)>[RS]12[GS]MFR...[RS][EOT]" />
+    </LinearLayout>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/writeTagWriteButton"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginTop="@dimen/rfid_section_spacing"
+        android:text="Write to Tag"
+        android:textStyle="bold" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnVerifyTagData"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:text="Verify Tag Memory" />
+
+    <!-- Verified Tag Data Card -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardVerifiedTagData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:cardCornerRadius="12dp"
+        app:cardBackgroundColor="@color/rfid_card_surface"
+        app:strokeColor="@color/rfid_card_stroke"
+        app:strokeWidth="1dp"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <TextView
+                android:id="@+id/tvVerifiedHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tag Memory Data"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="@color/rfid_primary" />
+
+            <TextView
+                android:id="@+id/tvVerifiedContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:textSize="12sp"
+                android:fontFamily="monospace"
+                android:textColor="@color/rfid_on_surface"
+                android:text="Reading tag..." />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        style="@style/TextAppearance.Rfid.SectionTitle"
+        android:text="Tag Security" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="New Access Password">
+
+      <com.google.android.material.textfield.TextInputEditText
+          android:id="@+id/writeTagNewAccessPwdInput"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/writeTagSetPwdButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Set Password" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+      <com.google.android.material.button.MaterialButton
+          android:id="@+id/writeTagLockButton"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:text="Lock" />
+
+      <View
+          android:layout_width="12dp"
+          android:layout_height="1dp" />
+
+      <com.google.android.material.button.MaterialButton
+          android:id="@+id/writeTagUnlockButton"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:text="Unlock" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/writeTagStatusText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        style="@style/TextAppearance.Rfid.HelperMetaText"
+        android:text="—" />
+  </LinearLayout>
+</androidx.core.widget.NestedScrollView>

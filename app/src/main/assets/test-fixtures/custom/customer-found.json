@@ -1,0 +1,9 @@
+{
+  "customer": {
+    "id": "c1",
+    "phone": "1234567890",
+    "email": "alice@example.com",
+    "name": "Alice Example"
+  }
+}
+

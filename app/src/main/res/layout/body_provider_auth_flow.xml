@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/rfid_card_spacing"
+    app:cardCornerRadius="@dimen/rfid_radius_large"
+    app:cardBackgroundColor="@color/rfid_card_surface"
+    app:cardElevation="2dp"
+    app:strokeColor="@color/rfid_card_stroke"
+    app:strokeWidth="1dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/rfid_screen_padding">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/TextAppearance.Rfid.BodyText"
+        android:text="Finish connecting your provider. Use the sign-in details you entered, or choose browser sign-in if the provider supports it." />
+
+    <TextView
+        android:id="@+id/authProviderName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/TextAppearance.Rfid.HelperMetaText"
+        android:text="Provider: not selected"
+        android:layout_marginTop="12dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/directAuthButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Use saved sign-in"
+        android:layout_marginTop="18dp"
+        style="@style/Widget.Rfid.Button.Primary" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/oauthAuthButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Use browser sign-in"
+        android:layout_marginTop="12dp"
+        style="@style/Widget.Rfid.Button.Secondary" />
+
+    <TextView
+        android:id="@+id/authStatusText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/TextAppearance.Rfid.HelperMetaText"
+        android:text="Waiting for connection"
+        android:layout_marginTop="16dp" />
+</LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>
+

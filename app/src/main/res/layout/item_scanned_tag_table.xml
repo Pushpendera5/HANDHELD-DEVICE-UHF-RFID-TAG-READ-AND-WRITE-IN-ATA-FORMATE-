@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingVertical="8dp"
+    android:paddingHorizontal="4dp"
+    android:gravity="center_vertical"
+    android:background="?attr/selectableItemBackground">
+
+    <TextView
+        android:id="@+id/tvRowIndex"
+        android:layout_width="32dp"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:textColor="@color/rfid_primary"
+        android:gravity="center"
+        tools:text="1" />
+
+    <TextView
+        android:id="@+id/tvRowEpc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:textColor="@color/rfid_on_surface"
+        android:ellipsize="middle"
+        android:singleLine="true"
+        tools:text="E28011910000000000000001" />
+
+    <TextView
+        android:id="@+id/tvRowRssi"
+        android:layout_width="56dp"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textColor="@color/rfid_on_surface"
+        android:gravity="center"
+        tools:text="-65 dBm" />
+
+    <TextView
+        android:id="@+id/tvRowCount"
+        android:layout_width="44dp"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:textColor="@color/rfid_secondary"
+        android:gravity="center"
+        tools:text="12" />
+
+
+
+
+</LinearLayout>

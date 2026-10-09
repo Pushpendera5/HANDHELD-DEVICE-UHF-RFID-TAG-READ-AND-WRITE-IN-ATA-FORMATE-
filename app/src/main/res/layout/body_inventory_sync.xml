@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/rfid_screen_padding">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/inventorySessionBannerCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/rfid_card_surface"
+        app:cardCornerRadius="@dimen/rfid_radius_large"
+        app:cardElevation="2dp"
+        app:strokeColor="@color/rfid_card_stroke"
+        app:strokeWidth="1dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/rfid_card_spacing">
+
+            <TextView
+                android:id="@+id/inventorySessionStateText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TextAppearance.Rfid.HelperMetaText"
+                android:text="Ready to scan" />
+
+            <TextView
+                android:id="@+id/sessionStatusText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/TextAppearance.Rfid.SectionTitle"
+                android:text="Start stock check" />
+
+            <LinearLayout
+                android:id="@+id/inventoryIdleActionRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/startSessionButton"
+                    style="@style/Widget.Rfid.Button.Primary"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Start" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/refreshInventoryButton"
+                    style="@style/Widget.Rfid.Button.Secondary"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/rfid_card_spacing"
+                    android:layout_weight="1"
+                    android:text="Refresh" />
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/resetInventoryButton"
+                style="@style/Widget.Rfid.Button.Secondary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Reset" />
+
+            <LinearLayout
+                android:id="@+id/inventoryActionRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/stopSessionButton"
+                    style="@style/Widget.Rfid.Button.Secondary"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Pause" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/finishSessionButton"
+                    style="@style/Widget.Rfid.Button.Primary"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/rfid_card_spacing"
+                    android:layout_weight="1"
+                    android:text="End scan" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/inventoryUploadStateText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                style="@style/TextAppearance.Rfid.HelperMetaText"
+                android:text="Upload status will appear here after you finish." />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/rfid_section_spacing"
+        android:orientation="horizontal">
+
+        <include
+            android:id="@+id/inventoryProductsStatCard"
+            layout="@layout/view_dashboard_stat_card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Space
+            android:layout_width="@dimen/rfid_card_spacing"
+            android:layout_height="1dp" />
+
+        <include
+            android:id="@+id/inventoryVerifiedStatCard"
+            layout="@layout/view_dashboard_stat_card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/rfid_list_item_spacing"
+        android:orientation="horizontal">
+
+        <include
+            android:id="@+id/inventoryReviewStatCard"
+            layout="@layout/view_dashboard_stat_card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Space
+            android:layout_width="@dimen/rfid_card_spacing"
+            android:layout_height="1dp" />
+
+        <include
+            android:id="@+id/inventoryUnknownStatCard"
+            layout="@layout/view_dashboard_stat_card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/inventoryFilterChipGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/rfid_section_spacing"
+        app:singleSelection="true"
+        app:selectionRequired="true">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/filterAllChip"
+            style="@style/Widget.Material3.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="All products" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/filterReviewChip"
+            style="@style/Widget.Material3.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Needs review" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/filterMissingChip"
+            style="@style/Widget.Material3.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Missing only" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/filterVerifiedChip"
+            style="@style/Widget.Material3.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Verified" />
+    </com.google.android.material.chip.ChipGroup>
+
+    <TextView
+        android:id="@+id/inventoryListHeadingText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/rfid_section_spacing"
+        style="@style/TextAppearance.Rfid.SectionTitle"
+        android:text="Products to verify" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/inventoryProductsRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/rfid_list_item_spacing"
+        android:clipToPadding="false"
+        android:nestedScrollingEnabled="false"
+        android:paddingBottom="@dimen/rfid_list_item_spacing"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+    <TextView
+        android:id="@+id/inventoryEmptyStateText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/rfid_list_item_spacing"
+        android:visibility="gone"
+        style="@style/TextAppearance.Rfid.HelperMetaText"
+        android:text="Products will appear here when a session is ready." />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/inventoryReviewPanelCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/rfid_section_spacing"
+        app:cardBackgroundColor="@color/rfid_card_surface"
+        app:cardCornerRadius="@dimen/rfid_radius_medium"
+        app:cardElevation="2dp"
+        app:strokeColor="@color/rfid_card_stroke"
+        app:strokeWidth="1dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/rfid_card_spacing">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/TextAppearance.Rfid.SectionTitle"
+                android:text="Review before upload" />
+
+            <TextView
+                android:id="@+id/inventoryMissingPreviewText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                style="@style/TextAppearance.Rfid.HelperMetaText"
+                android:text="Missing items will appear here." />
+
+            <TextView
+                android:id="@+id/inventoryUnknownPreviewText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                style="@style/TextAppearance.Rfid.HelperMetaText"
+                android:text="Unknown tags will appear here." />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
+

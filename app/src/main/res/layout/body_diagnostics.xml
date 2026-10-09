@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/rfid_screen_padding">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/diagnosticsRefreshButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Refresh status"
+            style="@style/Widget.Rfid.Button.Primary" />
+
+        <TextView
+            android:id="@+id/diagnosticsReaderTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            style="@style/TextAppearance.Rfid.SectionTitle"
+            android:text="Reader" />
+
+        <TextView
+            android:id="@+id/diagnosticsReaderSummary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TextAppearance.Rfid.HelperMetaText"
+            android:text="—" />
+
+        <TextView
+            android:id="@+id/diagnosticsNetworkTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            style="@style/TextAppearance.Rfid.SectionTitle"
+            android:text="Network" />
+
+        <TextView
+            android:id="@+id/diagnosticsNetworkSummary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TextAppearance.Rfid.HelperMetaText"
+            android:text="—" />
+
+        <TextView
+            android:id="@+id/diagnosticsAuthTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            style="@style/TextAppearance.Rfid.SectionTitle"
+            android:text="Auth" />
+
+        <TextView
+            android:id="@+id/diagnosticsAuthSummary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TextAppearance.Rfid.HelperMetaText"
+            android:text="—" />
+
+        <TextView
+            android:id="@+id/diagnosticsOutboxTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            style="@style/TextAppearance.Rfid.SectionTitle"
+            android:text="Sync outbox" />
+
+        <TextView
+            android:id="@+id/diagnosticsOutboxSummary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TextAppearance.Rfid.HelperMetaText"
+            android:text="—" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/diagnosticsExpandButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Show technical details"
+            style="@style/Widget.Rfid.Button.Secondary" />
+
+        <TextView
+            android:id="@+id/diagnosticsDetailsText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_marginTop="8dp"
+            style="@style/TextAppearance.Rfid.HelperMetaText"
+            android:textIsSelectable="true"
+            android:text="" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/diagnosticsUploadButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Send diagnostics snapshot"
+            style="@style/Widget.Rfid.Button.Secondary" />
+
+    </LinearLayout>
+</ScrollView>

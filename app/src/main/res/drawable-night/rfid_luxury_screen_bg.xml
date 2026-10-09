@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:type="linear"
+                android:angle="90"
+                android:startColor="#070A14"
+                android:endColor="#101A35" />
+        </shape>
+    </item>
+    <!-- Soft “gold glow” highlight -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:type="radial"
+                android:gradientRadius="560dp"
+                android:centerX="18%"
+                android:centerY="12%"
+                android:startColor="#55D8A45A"
+                android:endColor="#00000000"
+                android:useLevel="false" />
+        </shape>
+    </item>
+</layer-list>
+

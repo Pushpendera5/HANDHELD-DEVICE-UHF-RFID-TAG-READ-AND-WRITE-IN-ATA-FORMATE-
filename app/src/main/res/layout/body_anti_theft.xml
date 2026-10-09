@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/rfid_screen_padding">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/TextAppearance.Rfid.SectionTitle"
+            android:text="Anti-Theft EAS" />
+
+        <TextView
+            android:id="@+id/antiTheftEvalText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TextAppearance.Rfid.HelperMetaText"
+            android:layout_marginTop="16dp"
+            android:text="Evaluation: Waiting to scan" />
+
+        <TextView
+            android:id="@+id/antiTheftCountsText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TextAppearance.Rfid.HelperMetaText"
+            android:layout_marginTop="8dp"
+            android:text="Billed: 0 · Active: 0 · Unknown: 0" />
+
+        <TextView
+            android:id="@+id/antiTheftStatusText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TextAppearance.Rfid.HelperMetaText"
+            android:layout_marginTop="8dp"
+            android:text="Idle" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/antiTheftRescanButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="Start scan"
+            style="@style/Widget.Rfid.Button.Primary" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/antiTheftStopScanButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Stop scan"
+            style="@style/Widget.Rfid.Button.Secondary" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/antiTheftStopSoundButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Mute alarm"
+            style="@style/Widget.Rfid.Button.Secondary" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/antiTheftFinalPassButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Mark final pass"
+            android:enabled="false"
+            style="@style/Widget.Rfid.Button.Primary" />
+
+    </LinearLayout>
+</ScrollView>

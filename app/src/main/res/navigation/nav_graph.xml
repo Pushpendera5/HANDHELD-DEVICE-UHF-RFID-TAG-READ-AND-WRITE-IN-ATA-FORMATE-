@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <!-- Global entry point: header can always jump here. -->
+    <action
+        android:id="@+id/action_global_issueCenterFragment"
+        app:destination="@id/issueCenterFragment" />
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.rfidsoftwares.ui.screens.SplashFragment"
+        android:label="Splash">
+        <action
+            android:id="@+id/action_splash_to_modeSelectorFragment"
+            app:destination="@id/modeSelectorFragment" />
+        <action
+            android:id="@+id/action_splash_to_loginPageFragment"
+            app:destination="@id/loginPageFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splash_to_firstOpenCheckFragment"
+            app:destination="@id/firstOpenCheckFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/modeSelectorFragment"
+        android:name="com.rfidsoftwares.ui.screens.ModeSelectorFragment"
+        android:label="OpenRFID Suite">
+        <action
+            android:id="@+id/action_modeSelector_to_loginPageFragment"
+            app:destination="@id/loginPageFragment"
+            app:popUpTo="@id/modeSelectorFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_modeSelector_to_readTagFragment"
+            app:destination="@id/readTagFragment" />
+        <action
+            android:id="@+id/action_modeSelector_to_writeTagFragment"
+            app:destination="@id/writeTagFragment" />
+        <action
+            android:id="@+id/action_modeSelector_to_updateEpcFragment"
+            app:destination="@id/updateEpcFragment" />
+        <action
+            android:id="@+id/action_modeSelector_to_uhfConfigFragment"
+            app:destination="@id/uhfConfigFragment" />
+        <action
+            android:id="@+id/action_modeSelector_to_diagnosticsFragment"
+            app:destination="@id/diagnosticsFragment" />
+        <action
+            android:id="@+id/action_modeSelector_to_tagLockFragment"
+            app:destination="@id/tagLockFragment" />
+        <action
+            android:id="@+id/action_modeSelector_to_firstOpenCheckFragment"
+            app:destination="@id/firstOpenCheckFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/tagLockFragment"
+        android:name="com.rfidsoftwares.ui.screens.TagLockFragment"
+        android:label="Tag Lock &amp; Security" />
+
+    <fragment
+        android:id="@+id/firstOpenCheckFragment"
+        android:name="com.rfidsoftwares.ui.screens.FirstOpenCheckFragment"
+        android:label="First Open Check">
+        <action
+            android:id="@+id/action_firstOpenCheck_to_landingSlidesFragment"
+            app:destination="@id/landingSlidesFragment" />
+        <action
+            android:id="@+id/action_firstOpenCheck_to_loginPageFragment"
+            app:destination="@id/loginPageFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/landingSlidesFragment"
+        android:name="com.rfidsoftwares.ui.screens.LandingSlidesFragment"
+        android:label="Landing Slides">
+        <action
+            android:id="@+id/action_landingSlides_to_loginPageFragment"
+            app:destination="@id/loginPageFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/loginPageFragment"
+        android:name="com.rfidsoftwares.ui.screens.LoginPageFragment"
+        android:label="Login">
+        <action
+            android:id="@+id/action_loginPage_to_modeSelectorFragment"
+            app:destination="@id/modeSelectorFragment"
+            app:popUpTo="@id/loginPageFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_loginPage_to_connectApiPageFragment"
+            app:destination="@id/connectApiPageFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/connectApiPageFragment"
+        android:name="com.rfidsoftwares.ui.screens.ConnectApiPageFragment"
+        android:label="Connect API">
+        <action
+            android:id="@+id/action_connectApiPage_to_providerAuthFlowFragment"
+            app:destination="@id/providerAuthFlowFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/providerAuthFlowFragment"
+        android:name="com.rfidsoftwares.ui.screens.ProviderAuthFlowFragment"
+        android:label="Provider Auth Flow">
+        <argument
+            android:name="providerId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_providerAuthFlow_to_roleAndFeatureGateFragment"
+            app:destination="@id/roleAndFeatureGateFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/roleAndFeatureGateFragment"
+        android:name="com.rfidsoftwares.ui.screens.RoleAndFeatureGateFragment"
+        android:label="Role &amp; Feature Gate">
+        <action
+            android:id="@+id/action_roleGate_to_adminDashboardFragment"
+            app:destination="@id/adminDashboardFragment" />
+        <action
+            android:id="@+id/action_roleGate_to_userDashboardFragment"
+            app:destination="@id/userDashboardFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/adminDashboardFragment"
+        android:name="com.rfidsoftwares.ui.screens.AdminDashboardFragment"
+        android:label="Admin Dashboard">
+        <action
+            android:id="@+id/action_adminDashboard_to_inventorySyncFragment"
+            app:destination="@id/inventorySyncFragment" />
+        <action
+            android:id="@+id/action_adminDashboard_to_findProductFragment"
+            app:destination="@id/findProductFragment" />
+        <action
+            android:id="@+id/action_adminDashboard_to_missingItemsFragment"
+            app:destination="@id/missingItemsFragment" />
+        <action
+            android:id="@+id/action_adminDashboard_to_registerEpcFragment"
+            app:destination="@id/registerEpcFragment" />
+        <action
+            android:id="@+id/action_adminDashboard_to_checkoutBillingFragment"
+            app:destination="@id/checkoutBillingFragment" />
+        <action
+            android:id="@+id/action_adminDashboard_to_antiTheftFragment"
+            app:destination="@id/antiTheftFragment" />
+        <action
+            android:id="@+id/action_adminDashboard_to_diagnosticsFragment"
+            app:destination="@id/diagnosticsFragment" />
+        <action
+            android:id="@+id/action_adminDashboard_to_roleManagementFragment"
+            app:destination="@id/roleManagementFragment" />
+        <action
+            android:id="@+id/action_adminDashboard_to_uhfConfigFragment"
+            app:destination="@id/uhfConfigFragment" />
+        <action
+            android:id="@+id/action_adminDashboard_to_readTagFragment"
+            app:destination="@id/readTagFragment" />
+        <action
+            android:id="@+id/action_adminDashboard_to_writeTagFragment"
+            app:destination="@id/writeTagFragment" />
+        <action
+            android:id="@+id/action_adminDashboard_to_updateEpcFragment"
+            app:destination="@id/updateEpcFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/userDashboardFragment"
+        android:name="com.rfidsoftwares.ui.screens.UserDashboardFragment"
+        android:label="User Dashboard">
+        <action
+            android:id="@+id/action_userDashboard_to_inventorySyncFragment"
+            app:destination="@id/inventorySyncFragment" />
+        <action
+            android:id="@+id/action_userDashboard_to_findProductFragment"
+            app:destination="@id/findProductFragment" />
+        <action
+            android:id="@+id/action_userDashboard_to_checkoutBillingFragment"
+            app:destination="@id/checkoutBillingFragment" />
+        <action
+            android:id="@+id/action_userDashboard_to_antiTheftFragment"
+            app:destination="@id/antiTheftFragment" />
+        <action
+            android:id="@+id/action_userDashboard_to_diagnosticsFragment"
+            app:destination="@id/diagnosticsFragment" />
+    </fragment>
+
+    <!-- Placeholder feature pages (Phase 1 structural shells). -->
+    <fragment
+        android:id="@+id/inventorySyncFragment"
+        android:name="com.rfidsoftwares.ui.screens.InventorySyncFragment"
+        android:label="Inventory Sync">
+        <argument
+            android:name="screenKey"
+            app:argType="string"
+            android:defaultValue="inventory_sync" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/findProductFragment"
+        android:name="com.rfidsoftwares.ui.screens.ProductCatalogFragment"
+        android:label="Find Product">
+        <argument
+            android:name="screenKey"
+            app:argType="string"
+            android:defaultValue="find_product" />
+        <argument
+            android:name="targetProductId"
+            app:argType="string"
+            android:defaultValue="" />
+        <argument
+            android:name="targetEpc"
+            app:argType="string"
+            android:defaultValue="" />
+        <argument
+            android:name="autoStartLocate"
+            app:argType="boolean"
+            android:defaultValue="false" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/missingItemsFragment"
+        android:name="com.rfidsoftwares.ui.screens.MissingItemsFragment"
+        android:label="Missing Items" />
+
+    <fragment
+        android:id="@+id/registerEpcFragment"
+        android:name="com.rfidsoftwares.ui.screens.PlaceholderFragment"
+        android:label="Register EPC">
+        <argument
+            android:name="screenKey"
+            app:argType="string"
+            android:defaultValue="register_epc" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/checkoutBillingFragment"
+        android:name="com.rfidsoftwares.ui.screens.PlaceholderFragment"
+        android:label="Checkout Billing">
+        <argument
+            android:name="screenKey"
+            app:argType="string"
+            android:defaultValue="checkout_billing" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/antiTheftFragment"
+        android:name="com.rfidsoftwares.ui.screens.AntiTheftFragment"
+        android:label="Anti-Theft" />
+
+    <fragment
+        android:id="@+id/diagnosticsFragment"
+        android:name="com.rfidsoftwares.ui.screens.DiagnosticsFragment"
+        android:label="Diagnostics" />
+
+    <fragment
+        android:id="@+id/roleManagementFragment"
+        android:name="com.rfidsoftwares.ui.screens.PlaceholderFragment"
+        android:label="Role Management">
+        <argument
+            android:name="screenKey"
+            app:argType="string"
+            android:defaultValue="role_management" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/issueCenterFragment"
+        android:name="com.rfidsoftwares.ui.screens.IssueCenterFragment"
+        android:label="Issue Center" />
+
+    <fragment
+        android:id="@+id/uhfConfigFragment"
+        android:name="com.rfidsoftwares.ui.screens.UhfConfigFragment"
+        android:label="UHF Config" />
+
+    <fragment
+        android:id="@+id/readTagFragment"
+        android:name="com.rfidsoftwares.ui.screens.ReadTagFragment"
+        android:label="Read Tag" />
+
+    <fragment
+        android:id="@+id/writeTagFragment"
+        android:name="com.rfidsoftwares.ui.screens.WriteTagFragment"
+        android:label="Write Tag" />
+
+    <fragment
+        android:id="@+id/updateEpcFragment"
+        android:name="com.rfidsoftwares.ui.screens.UpdateEpcFragment"
+        android:label="Update EPC" />
+
+</navigation>
